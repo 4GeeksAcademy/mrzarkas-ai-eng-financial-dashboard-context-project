@@ -3,9 +3,9 @@ title: "Conservar los contratos y la arquitectura del dashboard"
 description: "Mantén coordinados los modelos frontend/backend y respeta la organización demostrada por el repositorio al ampliar el dashboard."
 scope: project
 globs:
-	- "backend/app/**/*.py"
-	- "frontend/src/**/*.ts"
-	- "frontend/src/**/*.tsx"
+  - "backend/app/**/*.py"
+  - "frontend/src/**/*.ts"
+  - "frontend/src/**/*.tsx"
 alwaysApply: false
 ---
 

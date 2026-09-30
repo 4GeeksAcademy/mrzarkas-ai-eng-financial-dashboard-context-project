@@ -3,9 +3,9 @@ title: "Mantener contratos y cálculos financieros explícitos"
 description: "Sigue los patrones FastAPI/Pydantic del backend, conserva la reproducibilidad de los datos simulados y aísla la lógica financiera para poder probarla."
 scope: project
 globs:
-	- "backend/app/**/*.py"
-	- "backend/tests/**/*.py"
-	- "frontend/src/lib/**/*.ts"
+  - "backend/app/**/*.py"
+  - "backend/tests/**/*.py"
+  - "frontend/src/lib/**/*.ts"
 alwaysApply: false
 ---
 

@@ -24,10 +24,11 @@ Cada archivo declara globs explícitos para el backend (`*.py` bajo `backend/`),
 
 ## Comprobaciones y límites
 
-- Se inspeccionó cada regla para confirmar que los metadatos requeridos, el separador y las instrucciones numeradas están presentes.
+- La comprobación inicial fue insuficiente: inspeccionó presencia de claves/contenido y whitespace general, pero no analizó el frontmatter con un parser YAML; por eso no detectó que cuatro listas `globs` estaban indentadas con tabulaciones. Ese defecto queda corregido: las entradas de esas listas usan ahora dos espacios.
+- Se parseó el frontmatter de las cinco reglas con `yaml.safe_load` de PyYAML, disponible en el entorno (no se instaló ninguna dependencia). Para cada regla se comprobó la presencia y tipo de `title`, `description`, `scope`, `globs` y `alwaysApply`, `scope: project`, `alwaysApply: false`, que `globs` sea una lista no vacía y que no queden tabs en el frontmatter.
+- Se comprobó la aplicabilidad de los globs sobre rutas existentes representativas de cada regla: tres rutas por archivo, quince en total. La comprobación respeta `**/` para directorios anidados y también para cero directorios intermedios. Las quince rutas encontraron al menos un patrón aplicable.
 - Se contrastaron las instrucciones con los archivos citados, incluidos `backend/app/routes.py`, `backend/app/main.py`, `backend/tests/`, `frontend/src/`, `frontend/package.json`, `frontend/vite.config.ts`, Dockerfiles y `docker-compose.yml`.
-- Se verificó el whitespace de los cuatro archivos de reglas y de este informe.
-- La validación es estructural y estática; no se modificó código funcional, tests ni configuración del proyecto.
+- La validación es estática y solo afecta documentación/reglas; no se modificó código funcional, tests ni configuración del proyecto.
 - `pytest` no pudo recoger tests porque falta `fastapi` en el Python activo. `npm test` no pudo iniciar porque `vitest` no está instalado en `frontend/`. ESLint y build no se ejecutaron; no se afirma que las suites pasen.
 - No se instalaron dependencias ni se levantaron servicios.
 

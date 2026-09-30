@@ -3,14 +3,14 @@ title: "Conservar la configuración segura y coordinada del entorno"
 description: "Coordina el acceso local a la API con Vite y Compose, evita exponer secretos y trata las configuraciones actuales como desarrollo."
 scope: project
 globs:
-	- "frontend/src/**/*.ts"
-	- "frontend/src/**/*.tsx"
-	- "frontend/vite.config.ts"
-	- "frontend/.env*"
-	- "frontend/Dockerfile"
-	- "backend/app/main.py"
-	- "backend/Dockerfile"
-	- "docker-compose.yml"
+  - "frontend/src/**/*.ts"
+  - "frontend/src/**/*.tsx"
+  - "frontend/vite.config.ts"
+  - "frontend/.env*"
+  - "frontend/Dockerfile"
+  - "backend/app/main.py"
+  - "backend/Dockerfile"
+  - "docker-compose.yml"
 alwaysApply: false
 ---
 

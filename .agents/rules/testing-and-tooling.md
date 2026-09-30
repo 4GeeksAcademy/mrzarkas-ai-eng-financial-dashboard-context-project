@@ -3,11 +3,11 @@ title: "Validar cambios con las herramientas existentes"
 description: "Añade pruebas al nivel adecuado y ejecuta e informa las validaciones del stack afectado sin atribuir resultados a comandos no ejecutados."
 scope: project
 globs:
-	- "backend/**/*.py"
-	- "frontend/src/**/*.ts"
-	- "frontend/src/**/*.tsx"
-	- "frontend/package.json"
-	- "backend/requirements.txt"
+  - "backend/**/*.py"
+  - "frontend/src/**/*.ts"
+  - "frontend/src/**/*.tsx"
+  - "frontend/package.json"
+  - "backend/requirements.txt"
 alwaysApply: false
 ---
 
